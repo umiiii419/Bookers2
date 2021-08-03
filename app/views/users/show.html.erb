@@ -1,24 +1,26 @@
 <h2>Books</h2>
 
 <table>
-      <thead>
-        <tr>
-          <th colspan="1"></th>
-          <th>Title</th>
-          <th>Opinion</th>
-        </tr>
-      </thead>
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
 
-      <% @books.each do |book| %>
-      <tbody>
-        <tr>
-          <%= attachment_image_tag book, :image %>
-          <td><%= image_tag(sample-author1.jpg) %></td>
-          <td><%= book.title %></td>
-          <td><%= book.body %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
-  </body>
-</html>
+  <% @books.each do |book| %>
+  <tbody>
+    <tr>
+      <%= attachment_image_tag book, :image %>
+      <td><%= image_tag(sample-author1.jpg) %></td>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<% if @user.id == current_user.id %>
+ <p><%= link_to "edit", edit_user_path(@user) %></p>
+<% end %>
