@@ -17,10 +17,11 @@
         </tr>
       </thead>
 
-      <% @books.each do |bool| %>
+      <% @books.each do |book| %>
       <tbody>
         <tr>
-          <td></td>
+          <%= attachment_image_tag book, :image %>
+          <td><%= image_tag(sample-author1.jpg) %></td>
           <td><%= book.title %></td>
           <td><%= book.body %></td>
         </tr>
