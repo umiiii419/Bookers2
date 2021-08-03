@@ -25,7 +25,7 @@
       </li>
     <% else %>
       <li>
-        <%= link_to "Home" %>
+        <%= link_to "Home", user_path(current_user.id) %>
       </li>
       <li>
         <%= link_to "About" %>
@@ -36,7 +36,7 @@
       <li>
         <%= link_to "login", new_user_session_path %>
       </li>
-    <% end %>  
+    <% end %>
     <%= yield %>
   </body>
 </html>
