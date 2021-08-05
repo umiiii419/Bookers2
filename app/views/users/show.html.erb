@@ -1,4 +1,4 @@
-<h2>Books</h2>
+<h2>Users info</h2>
 
 <table>
   <thead>
@@ -13,13 +13,13 @@
   <tbody>
     <tr>
       <%= attachment_image_tag book, :image %>
-      <td><%= image_tag(sample-author1.jpg) %></td>
+      <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpeg" %></td>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
     </tr>
   </tbody>
   <% end %>
-</table>
+  </table>
 
 <% if @user.id == current_user.id %>
  <p><%= link_to "edit", edit_user_path(@user) %></p>
