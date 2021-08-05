@@ -3,13 +3,15 @@
 <table>
   <tbody>
     <tr>
-      <%= attachment_image_tag @book, :image %>
-      <td><%= @book.user.name %></td>
+      <td>
+        <%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg"%>
+      </td>
+      <td><%= link_to @user.name, user_path(@user) %></td>
       <td><%= @book.title %></td>
       <td><%= @book.body %></td>
       <% if @book.user == current_user %>
       <td><%= link_to "Edit", edit_book_path %></td>
-      <td><%= link_to "Destroy", books_path %></td>
+      <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"} %></td>
       <% end %>
     </tr>
   </tbody>
