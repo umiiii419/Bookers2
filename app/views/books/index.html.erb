@@ -6,8 +6,11 @@
   </head>
 
   <body>
-    <h1>Books</h1>
-
+    
+    <h2>New Books</h2>
+    <%= render 'books/book', book: @nebook %>
+    
+    <h2>Books</h2>
     <table>
       <thead>
         <tr>
@@ -35,3 +38,4 @@
     </table>
   </body>
 </html>
+
