@@ -1,6 +1,6 @@
 <h2>New Book</h2>
 <%= render 'books/book', book: @newbook %>
-      
+
 <h2>Book Detail</h2>
 
 <table>
@@ -10,7 +10,7 @@
         <%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg"%>
       </td>
       <td><%= link_to @user.name, user_path(@user) %></td>
-      <td><%= @book.title %></td>
+      <td><%= link_to @book.title, book_path(@book.id) %></td>
       <td><%= @book.body %></td>
       <% if @book.user == current_user %>
       <td><%= link_to "Edit", edit_book_path %></td>
