@@ -1,4 +1,7 @@
-<h2>Users info</h2>
+<%= render 'users/user', user: @user %>
+<%= render 'books/book', book: @book %>
+
+<h2>Books</h2>
 
 <table>
   <thead>
@@ -12,15 +15,12 @@
   <% @books.each do |book| %>
   <tbody>
     <tr>
-      <%= attachment_image_tag book, :image %>
+      <%= attachment_image_tag @user, :profile_image %>
       <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpeg" %></td>
-      <td><%= book.title %></td>
+      <td><%= link_to book.title, book_path(book.id) %></td>
       <td><%= book.body %></td>
     </tr>
   </tbody>
   <% end %>
   </table>
 
-<% if @user.id == current_user.id %>
- <p><%= link_to "edit", edit_user_path(@user) %></p>
-<% end %>

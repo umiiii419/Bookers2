@@ -3,7 +3,7 @@ class HomesController < ApplicationController
   def top
   end
 
-  def abput
+  def about
   end
 
 end
