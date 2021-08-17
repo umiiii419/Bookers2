@@ -37,7 +37,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.user_id = current_user.id
-    if @book.update(book.params)
+    if @book.update(book_params)
       flash[:notice]="Book was successfully updated."
       redirect_to book_path(@book.id)
     else
