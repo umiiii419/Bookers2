@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:top, :about, :public_action]
 
   def create
     @book = Book.new(book_params)
@@ -47,10 +48,9 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-    if @book.destroy
+    @book.destroy
       flash[:notice]="Book was successfully destroyed."
       redirect_to books_path
-    end
   end
 
 

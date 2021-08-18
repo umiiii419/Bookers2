@@ -16,26 +16,49 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;;
  }
-clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
+
 .title {
   color: #fff;
   font-size: 20px;
 }
+
+.btn {
+  color: #fff;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #343a40 !important;
+}
+.navbar-right{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.header-link{
+  display: flex;
+}
+
 .body {
   margin: 55px 10% 0px 8%;
 }
+
 .notice {
   color: green;
   }
+
 .error {
   color: red;
 }
@@ -46,4 +69,8 @@ clearfix::after {
 }
 .actions {
   margin-top: 5px;
+}
+
+footer{
+  text-align: center;
 }
